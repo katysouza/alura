@@ -1,38 +1,19 @@
-var listaFilmesFavoritos = [];
-var listaTrailersFilmesFavoritos = [];
-
-function adicionarFilme(){
-  var filmeFavorito = document.getElementById('filme').value;
-  var trailerFilmeFavorito = document.getElementById('trailer').value;
+var listaFilmes = [
+    "https://upload.wikimedia.org/wikipedia/pt/thumb/1/1b/Schoolrockposter.jpg/210px-Schoolrockposter.jpg",
+    "https://1.bp.blogspot.com/-ImZPRqLsluE/WFK156_6pNI/AAAAAAAAYBY/0lEhNRF5wfQdLfr6hpT57_Jt2eBrE9H5wCLcB/s1600/arrival-kartoun-desert.jpg",
+    "https://musicart.xboxlive.com/7/94fc5000-0000-0000-0000-000000000002/504/image.jpg",
+    "https://upload.wikimedia.org/wikipedia/pt/7/76/10_Things_I_Hate_About_You.jpg",
+    "https://br.web.img2.acsta.net/medias/nmedia/18/91/08/82/20128877.JPG"
+  ];
   
-    if(( filmeFavorito.endsWith('jpg') ) || ( filmeFavorito.endsWith('jpeg') )){
-      
-      document.getElementById('mensagemDeErro').innerHTML = '';
-      listaFilmesFavoritos.push(filmeFavorito);
-      listaTrailersFilmesFavoritos.push(trailerFilmeFavorito);
-      
-      limpaCampos();
-      recarregarFilmes();
-      
-    } else {
-      
-      document.getElementById('mensagemDeErro').innerHTML = 'Endereço de imagem inválido, tente novamente';
-      limpaCampos();
-      
-    }
+  // listaFilmes[0] =
+  //   "https://upload.wikimedia.org/wikipedia/pt/thumb/1/1b/Schoolrockposter.jpg/210px-Schoolrockposter.jpg";
+  // listaFilmes[1] =
+  //   "https://1.bp.blogspot.com/-ImZPRqLsluE/WFK156_6pNI/AAAAAAAAYBY/0lEhNRF5wfQdLfr6hpT57_Jt2eBrE9H5wCLcB/s1600/arrival-kartoun-desert.jpg";
+  // listaFilmes[2] =
+  //   "https://musicart.xboxlive.com/7/94fc5000-0000-0000-0000-000000000002/504/image.jpg";
+  
+  for (var i = 0; i < listaFilmes.length; i++) {
+    document.write("<img src=" + listaFilmes[i] + ">");
   }
-
-function recarregarFilmes(){
- 
-  var elementoListaFilmes = document.getElementById('listaFilmes');
-  elementoListaFilmes.innerHTML = '';
-  for(i=0; i < listaFilmesFavoritos.length ; i++){
-    elementoListaFilmes.innerHTML += `<a href=" ${listaTrailersFilmesFavoritos[i]} "><img src=" ${listaFilmesFavoritos[i]} "></a>`;
-    
-  }
-}
-
-function limpaCampos(){
-   document.getElementById('filme').value = '';
-   document.getElementById('trailer').value = '';
-}
+  
